@@ -15,5 +15,15 @@ public class LogEntriesList implements Serializable {
         LogEntryList = logEntryList;
     }
 
+    public ArrayList<LogEntry> getLogEntryList(){
+        return LogEntryList;
+    }
 
+    public void AddLogEntryList(LogEntry logEntry){
+        LogEntryList.add(logEntry);
+    }
+
+    public void RemoveLogEntryList(LogEntry logEntry){
+        LogEntryList.remove(logEntry);
+    }
 }
