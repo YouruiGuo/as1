@@ -78,14 +78,14 @@ public class ViewLogEntriesActivity extends ActionBarActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                        // String datee = String.valueOf(logentries.get(finalPosition).entryDate);
-                        SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-                        Date d = logentries.get(finalPosition).entryDate;
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                        Date d = logentries.get(finalPosition).getEntryDate();
                         String datee = df.format(d);
-                        String station = logentries.get(finalPosition).Station;
-                        String odometer = String.valueOf(logentries.get(finalPosition).Odometer);
-                        String FuelGrade = logentries.get(finalPosition).FuelGrade;
-                        String FuelAmount = String.valueOf((float) logentries.get(finalPosition).FuelAmount);
-                        String FuelUnitCost = String.valueOf(logentries.get(finalPosition).FuelUnitCost);
+                        String station = logentries.get(finalPosition).getStation();
+                        String odometer = String.valueOf(logentries.get(finalPosition).getOdometer());
+                        String FuelGrade = logentries.get(finalPosition).getFuelGrade();
+                        String FuelAmount = String.valueOf((float) logentries.get(finalPosition).getFuelAmount());
+                        String FuelUnitCost = String.valueOf(logentries.get(finalPosition).getFuelUnitCost());
 
                         Intent intent = new Intent(ViewLogEntriesActivity.this, EditEntriesActivity.class);
                         intent.putExtra("finalposition",finalPosition);

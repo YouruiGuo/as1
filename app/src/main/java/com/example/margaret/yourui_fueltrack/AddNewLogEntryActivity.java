@@ -81,17 +81,21 @@ public class AddNewLogEntryActivity extends ActionBarActivity {
                 Toast.makeText(AddNewLogEntryActivity.this, "Add new log entry :)", Toast.LENGTH_SHORT).show();
 
                 LogEntry logentry = new LogEntry(datee, station, odometer, FuelGrade, FuelAmount, FuelUnitCost);////////BUG!!!!
-                logentries.add(logentry);
-                adapter.notifyDataSetChanged();
-                saveInFile();
+                if (logentries.contains(logentry)){
+                    throw new IllegalArgumentException();
+                }
+                else{
+                    logentries.add(logentry);
+                    adapter.notifyDataSetChanged();
+                    saveInFile();
 
-                dateText.setText("");
-                stationText.setText("");
-                OdometerText.setText("");
-                FuelGradeText.setText("");
-                FuelAmountText.setText("");
-                FuelUnitCostText.setText("");
-
+                    dateText.setText("");
+                    stationText.setText("");
+                    OdometerText.setText("");
+                    FuelGradeText.setText("");
+                    FuelAmountText.setText("");
+                    FuelUnitCostText.setText("");
+                }
             }
         });
 

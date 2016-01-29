@@ -107,10 +107,10 @@ public class EditEntriesActivity extends ActionBarActivity {
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(EditEntriesActivity.this, MainActivity.class);
+                /*Intent intent = new Intent(EditEntriesActivity.this, MainActivity.class);
                 startActivity(intent);
-                Toast.makeText(EditEntriesActivity.this,"cancel editing log entry",Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(EditEntriesActivity.this,"cancel editing log entry",Toast.LENGTH_SHORT).show();*/
+                finish();
             }
         });
     }
