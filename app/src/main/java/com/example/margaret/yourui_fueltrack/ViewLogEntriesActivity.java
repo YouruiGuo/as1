@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,12 +35,16 @@ public class ViewLogEntriesActivity extends ActionBarActivity {
     private ArrayAdapter<LogEntry> adapter;
 
     private ListView oldEntryList;
+    private EditText TotalFuelCostText;
+    private float sum = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_log_entries);
 
         oldEntryList = (ListView) findViewById(R.id.LogEntriesViews);
+        TotalFuelCostText = (EditText)findViewById(R.id.TotalFuelCostText);
 
         oldEntryList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -82,10 +87,10 @@ public class ViewLogEntriesActivity extends ActionBarActivity {
                         Date d = logentries.get(finalPosition).getEntryDate();
                         String datee = df.format(d);
                         String station = logentries.get(finalPosition).getStation();
-                        String odometer = String.valueOf(logentries.get(finalPosition).getOdometer());
+                        String odometer = logentries.get(finalPosition).getOdometer();
                         String FuelGrade = logentries.get(finalPosition).getFuelGrade();
-                        String FuelAmount = String.valueOf((float) logentries.get(finalPosition).getFuelAmount());
-                        String FuelUnitCost = String.valueOf(logentries.get(finalPosition).getFuelUnitCost());
+                        String FuelAmount = logentries.get(finalPosition).getFuelAmount();
+                        String FuelUnitCost = logentries.get(finalPosition).getFuelUnitCost();
 
                         Intent intent = new Intent(ViewLogEntriesActivity.this, EditEntriesActivity.class);
                         intent.putExtra("finalposition",finalPosition);
@@ -115,6 +120,13 @@ public class ViewLogEntriesActivity extends ActionBarActivity {
         loadFromFile();
         adapter = new ArrayAdapter<LogEntry>(ViewLogEntriesActivity.this,R.layout.list_item,logentries);
         oldEntryList.setAdapter(adapter);
+        sum = 0;
+        for (int i = 0; i < logentries.size(); i++){
+            sum += Float.valueOf(logentries.get(i).getFuelCost());
+        }
+        String str = String.format("%.2f",sum);
+        TotalFuelCostText.setText(str);
+
     }
 
     private void loadFromFile(){

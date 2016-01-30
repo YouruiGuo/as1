@@ -17,5 +17,29 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:choiceMode="singleChoice"
-        android:longClickable="true" />
+        android:longClickable="true"
+        android:layout_above="@+id/TotalFuelCostText" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TotalFuelCostText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/LogEntriesViews"
+        android:layout_alignEnd="@+id/LogEntriesViews"
+        android:layout_toRightOf="@+id/textView7"
+        android:layout_toEndOf="@+id/textView7"
+        android:editable="false"
+        android:inputType="none" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Total Fuel Cost is"
+        android:id="@+id/textView7"
+        android:layout_alignTop="@+id/TotalFuelCostText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

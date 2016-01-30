@@ -7,30 +7,56 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.margaret.yourui_fueltrack.MainActivity">
+    tools:context="com.example.margaret.yourui_fueltrack.MainActivity"
+    android:background="#d4f599"
+    style="@style/Base.TextAppearance.AppCompat.Button">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="view log entries"
-        android:id="@+id/viewlogentriesbutton"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="94dp"
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="ViewLogEntries" />
+        android:background="#e1e57d">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add new log entry"
-        android:id="@+id/AddNewLogEntrybutton"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/viewlogentriesbutton"
-        android:layout_alignEnd="@+id/viewlogentriesbutton"
-        android:onClick="AddNewLogEntry" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Welcome To yourui--FuelTrack"
+            android:id="@+id/textView8"
+            android:layout_row="13"
+            android:layout_column="6"
+            android:textColor="#6226b6"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="Add new log entry"
+            android:id="@+id/AddNewLogEntrybutton"
+            android:onClick="AddNewLogEntry"
+            android:background="#87b9d8"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_row="18"
+            android:layout_column="6"
+            android:layout_marginBottom="@dimen/abc_action_bar_icon_vertical_padding_material" />
+
+        <Button
+            android:layout_width="356dp"
+            android:layout_height="65dp"
+            android:text="view log entries"
+            android:id="@+id/viewlogentriesbutton"
+            android:onClick="ViewLogEntries"
+            android:background="#87b9d8"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="19"
+            android:layout_column="6" />
+    </GridLayout>
+
 </RelativeLayout>

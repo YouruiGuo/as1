@@ -65,7 +65,6 @@ public class AddNewLogEntryActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Date datee = null;
-
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 try {
                     datee = df.parse(dateText.getText().toString());

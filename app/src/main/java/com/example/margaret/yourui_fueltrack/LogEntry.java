@@ -28,8 +28,8 @@ public class LogEntry {
         Station = station;
     }
 
-    public double getOdometer() {
-        return Odometer;
+    public String getOdometer() {
+        return String.format("%.1f",Odometer);
     }
 
     public void setOdometer(double odometer) {
@@ -44,24 +44,24 @@ public class LogEntry {
         FuelGrade = fuelGrade;
     }
 
-    public double getFuelAmount() {
-        return FuelAmount;
+    public String getFuelAmount() {
+        return String.format("%.3f",FuelAmount);
     }
 
     public void setFuelAmount(double fuelAmount) {
         FuelAmount = fuelAmount;
     }
 
-    public double getFuelUnitCost() {
-        return FuelUnitCost;
+    public String getFuelUnitCost() {
+        return String.format("%.1f",FuelUnitCost);
     }
 
     public void setFuelUnitCost(double fuelUnitCost) {
         FuelUnitCost = fuelUnitCost;
     }
 
-    public double getFuelCost() {
-        return FuelCost;
+    public String getFuelCost() {
+        return String.format("%.2f",FuelCost);
     }
 
     public void setFuelCost(double fuelCost) {
@@ -91,9 +91,9 @@ public class LogEntry {
     }
 
     public String toString(){
-        return "Entry Date: " + entryDate + " | Station: " + Station + " | Odometer: " + Odometer
-                + " | Fuel Grade:" + FuelGrade + " | Fuel Amount: " + FuelAmount + " | Fuel Unit Cost:"
-                + FuelUnitCost + " | Fuel Cost: " + FuelCost;
+        return "Entry Date: " + entryDate + " | Station: " + Station + " | Odometer: " + String.format("%.1f",Odometer)
+                + " | Fuel Grade:" + FuelGrade + " | Fuel Amount: " + String.format("%.3f",FuelAmount) + " | Fuel Unit Cost:"
+                + String.format("%.1f",FuelUnitCost) + " | Fuel Cost: " +String.format("%.2f",FuelCost);
     }
 
     public Date getEntryDate() {
