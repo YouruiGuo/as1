@@ -60,6 +60,13 @@ public class ViewLogEntriesActivity extends ActionBarActivity {
                         logentries.remove(finalPosition);
                         adapter.notifyDataSetChanged();
                         saveInFile();
+                        loadFromFile();
+                        sum = 0;
+                        for (int i = 0; i < logentries.size(); i++){
+                            sum += Float.valueOf(logentries.get(i).getFuelCost());
+                        }
+                        String str = String.format("%.2f",sum);
+                        TotalFuelCostText.setText(str);
                     }
                 });
                 adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

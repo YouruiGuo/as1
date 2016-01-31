@@ -62,26 +62,47 @@ public class AddNewLogEntryActivity extends ActionBarActivity {
         Button cancelButton = (Button) findViewById(R.id.Cancelbutton);
 
         addButton.setOnClickListener(new View.OnClickListener() {
+            String station,FuelGrade;
+            float odometer,FuelAmount,FuelUnitCost;
+            Date datee = null;
             @Override
             public void onClick(View view) {
-                Date datee = null;
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 try {
                     datee = df.parse(dateText.getText().toString());
                 } catch (ParseException e) {
+                    datee = null;
                     e.printStackTrace();
                 }
-                String station = stationText.getText().toString();
-                float odometer = Float.valueOf(OdometerText.getText().toString());
-                String FuelGrade = FuelGradeText.getText().toString();
-                float FuelAmount = Float.valueOf(FuelAmountText.getText().toString());
-                float FuelUnitCost = Float.valueOf(FuelUnitCostText.getText().toString());
-
-                Toast.makeText(AddNewLogEntryActivity.this, "Add new log entry :)", Toast.LENGTH_SHORT).show();
+                try{
+                    station = stationText.getText().toString();
+                }catch(Exception e){
+                    station = null;
+                }
+                try{
+                    odometer = Float.valueOf(OdometerText.getText().toString());
+                }catch (Exception e){
+                    odometer = 0;
+                }
+                try{
+                    FuelGrade = FuelGradeText.getText().toString();
+                }catch (Exception e){
+                    FuelGrade = null;
+                }
+                try{
+                    FuelAmount = Float.valueOf(FuelAmountText.getText().toString());
+                }catch (Exception e){
+                    FuelAmount = 0;
+                }
+                try{
+                    FuelUnitCost = Float.valueOf(FuelUnitCostText.getText().toString());
+                }catch (Exception e){
+                    FuelUnitCost = 0;
+                }
 
                 LogEntry logentry = new LogEntry(datee, station, odometer, FuelGrade, FuelAmount, FuelUnitCost);////////BUG!!!!
-                if (logentries.contains(logentry)){
-                    throw new IllegalArgumentException();
+                if (logentries.contains(logentry) || (FuelAmount == 0 || FuelUnitCost == 0)){
+                    Toast.makeText(AddNewLogEntryActivity.this,"fail to add new log entry",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     logentries.add(logentry);
@@ -94,6 +115,7 @@ public class AddNewLogEntryActivity extends ActionBarActivity {
                     FuelGradeText.setText("");
                     FuelAmountText.setText("");
                     FuelUnitCostText.setText("");
+                    Toast.makeText(AddNewLogEntryActivity.this, "Add new log entry :)", Toast.LENGTH_SHORT).show();
                 }
             }
         });

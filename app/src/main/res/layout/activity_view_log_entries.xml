@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.margaret.yourui_fueltrack.ViewLogEntriesActivity">
+    tools:context="com.example.margaret.yourui_fueltrack.ViewLogEntriesActivity"
+    android:background="#d4f599">
 
     <ListView
         android:layout_width="wrap_content"
@@ -18,7 +19,8 @@
         android:layout_alignParentStart="true"
         android:choiceMode="singleChoice"
         android:longClickable="true"
-        android:layout_above="@+id/TotalFuelCostText" />
+        android:layout_above="@+id/TotalFuelCostText"
+        android:background="#e1e57d" />
 
     <EditText
         android:layout_width="fill_parent"
