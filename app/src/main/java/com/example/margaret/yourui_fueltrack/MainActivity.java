@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    protected void onStart(){
+    /*protected void onStart(){
         super.onStart();
         loadFromFile();
         //adapter = new ArrayAdapter<LogEntry>(MainActivity.this,R.layout.list_item,logentries);
@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
