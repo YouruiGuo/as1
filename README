@@ -1,0 +1,6 @@
+The URL of YouTube video 
+https://www.youtube.com/watch?v=TY9gLus9MI4
+
+This app is to record the fuel using. To add a new log entry, click the add a new entry button and then type your data in and save. You can view your log entries by clicking the view log entry button.If you want to edit it, please click the item you want to edit. Or if you want to delete it, please long click the one you want to delete.
+
+Pay attention: The fuel amount and fuel unit cost can't be null. So you have to make sure these two numbers typed in correctly, otherwise you can't build a new log entry successfully. Rest of informations can be empty and they will be set as 0 or null when you view the log entries.
